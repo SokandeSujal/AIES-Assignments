@@ -1,59 +1,79 @@
-# AI and Expert Systems — Lab Assignments
+# AIES Lab Assignments
 
-**Course:** Artificial Intelligence (CET2007B / CS332)  
-**Academic Year:** 2025–2026
+**Course:** Artificial Intelligence and Expert Systems  
+**Academic Year:** 2025-2026
 
----
+This repository contains the lab assignments submitted for the AIES course. It includes classic search and reasoning assignments, a chatbot application, and a face recognition system.
 
-## Files
+## Repository Map
 
-| File | Description |
-|---|---|
-| `state_space_search.py` | BFS and DFS on 8-Puzzle |
-| `a_star.py` | A* algorithm for grid pathfinding |
-| `hill_climbing.py` | Hill Climbing for TSP using 2-opt swaps |
-| `csp.py` | CSP solver: SEND + MORE = MONEY |
-| `StudyAssignment_StateSpaceSearch.ipynb` | Notebook exploring BFS and DFS |
-| `Assignment1_AStar.ipynb` | Notebook exploring A* |
-| `Assignment2_HillClimbing.ipynb` | Notebook exploring Hill Climbing |
-| `Assignment3_CSP.ipynb` | Notebook exploring CSP |
-
----
-
-## Assignments
-
-### Study Assignment — State Space Search
-
-Implements BFS and DFS to solve the 8-Puzzle. BFS explores nodes level by level and always finds the shortest path. DFS explores as deep as possible and uses less memory but may not find the shortest path.
-
-### Assignment 1 — A* Algorithm
-
-A* finds the shortest path on a grid using `f(n) = g(n) + h(n)`, where `g(n)` is the cost from start and `h(n)` is the Manhattan Distance heuristic. It is faster than BFS because the heuristic guides the search toward the goal.
-
-### Assignment 2 — Hill Climbing for TSP
-
-Hill Climbing starts from a random tour and repeatedly applies 2-opt swaps to reduce the total distance. It stops when no improving swap can be found. Since results depend on the starting tour, running it multiple times and taking the best result helps.
-
-### Assignment 3 — Constraint Satisfaction Problem
-
-Solves SEND + MORE = MONEY by trying all permutations of digits for the letters. The constraints (no leading zeros, all digits unique, arithmetic equality) are checked for each permutation. The solution is `9567 + 1085 = 10652`.
-
----
-
-## How to Run
-
-No external libraries needed. All code uses the Python standard library.
-
-```bash
-python state_space_search.py
-python a_star.py
-python hill_climbing.py
-python csp.py
+```mermaid
+flowchart TD
+    A[AIES Assignments] --> B[Assignment 1-5\nSearch, optimization, CSP, game playing, expert system]
+    A --> C[Exp 6 Chatbot\nLLM app with avatar and agent arena]
+    A --> D[Experiment 7 Face Recognition\nImage and webcam recognition]
 ```
 
-To run notebooks:
+## Files and Experiments
 
-```bash
-pip install notebook
-jupyter notebook
-```
+| Item | Type | Description |
+|---|---|---|
+| `state_space_search.py` | Study Assignment | BFS and DFS on the 8-puzzle |
+| `a_star.py` | Assignment 1 | A* pathfinding |
+| `hill_climbing.py` | Assignment 2 | Hill climbing for TSP |
+| `csp.py` | Assignment 3 | SEND + MORE = MONEY CSP solver |
+| `Assignment4_Minimax_TicTacToe.py` | Assignment 4 | Minimax for Tic-Tac-Toe |
+| `Assignment5_Expert_System.pl` | Assignment 5 | Prolog expert system |
+| `Exp 6 Chatbot/` | Experiment 6 | Full-stack AI chatbot with three modes |
+| `Experiment 7 Face Recognition/` | Experiment 7 | Face recognition from images and webcam |
+| `EXPERIMENT_6_7_NOTES.md` | Notes | Viva-oriented explanation of both experiments |
+
+## Existing Assignments
+
+### Study Assignment - State Space Search
+
+Implements BFS and DFS to solve the 8-puzzle. BFS explores level by level and guarantees the shortest path in an unweighted graph. DFS explores depth-first and uses less memory but may miss the shortest path.
+
+### Assignment 1 - A* Algorithm
+
+Implements A* using `f(n) = g(n) + h(n)`, where `g(n)` is the path cost and `h(n)` is the heuristic estimate to the goal.
+
+### Assignment 2 - Hill Climbing
+
+Uses hill climbing with 2-opt swaps for a Traveling Salesman Problem style optimization setup.
+
+### Assignment 3 - Constraint Satisfaction Problem
+
+Solves the cryptarithmetic problem `SEND + MORE = MONEY` by assigning digits under uniqueness and arithmetic constraints.
+
+### Assignment 4 - Minimax
+
+Implements minimax for Tic-Tac-Toe decision making.
+
+### Assignment 5 - Expert System
+
+Implements an expert system in Prolog.
+
+## Experiment 6 - Chatbot
+
+The chatbot is a full-stack AI application with:
+
+- `Ask AI` for general conversation
+- `My Avatar` for a grounded persona chatbot
+- `Agent Arena` for a Thinker-Critic-Judge reasoning flow
+
+See [`Exp 6 Chatbot/README.md`](./Exp%206%20Chatbot/README.md).
+
+## Experiment 7 - Face Recognition
+
+The face recognition experiment builds a recognition pipeline using:
+
+- dlib for detection, landmarks, and embeddings
+- scikit-learn KNN for identity classification
+- OpenCV for webcam capture and display
+
+See [`Experiment 7 Face Recognition/README.md`](./Experiment%207%20Face%20Recognition/README.md).
+
+## Viva Notes
+
+Detailed viva preparation notes for both experiments are available in [`EXPERIMENT_6_7_NOTES.md`](./EXPERIMENT_6_7_NOTES.md).
